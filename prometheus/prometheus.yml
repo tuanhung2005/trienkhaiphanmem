@@ -13,10 +13,6 @@ scrape_configs:
     static_configs:
       - targets: ['grafana:3000']
 
-  - job_name: 'node-exporter'
-    static_configs:
-      - targets: ['node-exporter:9100']
-
   - job_name: 'web-app'
     static_configs:
       - targets: ['web-app:8082']
