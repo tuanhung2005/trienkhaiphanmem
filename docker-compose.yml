@@ -48,9 +48,6 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./grafana/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
-      - ./grafana/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
       - grafana-data:/var/lib/grafana
     environment:
       - GF_SMTP_ENABLED=true
@@ -58,18 +55,7 @@ services:
       - GF_SMTP_USER=user1@gmail.com
       - GF_SMTP_PASSWORD=mysamplePassword
       - GF_SMTP_FROM_ADDRESS=user1@gmail.com
-      # - GF_SERVER_DOMAIN=grafana.my.domain
-      # - GF_SERVER_ROOT_URL=grafana.my.domain
     restart: unless-stopped
-
-
-  node-exporter:
-    image: prom/node-exporter
-    container_name: node-exporter
-    ports:
-      - "9100:9100"
-    networks:
-      - monitoring
 
 volumes:
   sql_data:
