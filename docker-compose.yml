@@ -30,7 +30,7 @@ services:
       timeout: 5s
       retries: 5
 
- prometheus:
+   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
     user: root
