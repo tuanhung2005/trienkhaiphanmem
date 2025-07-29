@@ -16,16 +16,15 @@ services:
       - monitoring
 
   web-app:
-    container_name: web-app
     image: hungnguyen008/web-app:1.0.3
+    container_name: web-app
     ports:
-      - "8082:8082" 
+      - "8082:8082"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=quanlynhansu;User Id=sa;Password=StrongP@ssw0rd123;
     depends_on:
       - sqlserver
-    restart: always
     networks:
       - monitoring
 
