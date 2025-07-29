@@ -24,9 +24,8 @@ services:
     ports:
       - "8082:8082" 
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:sqlserver://sqlserver:1433;databaseName=quanlynhansu;encrypt=false;trustServerCertificate=true
-      - SPRING_DATASOURCE_USERNAME=sa
-      - SPRING_DATASOURCE_PASSWORD=StrongP@ssw0rd123
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=quanlynhansu;User Id=sa;Password=StrongP@ssw0rd123;
     depends_on:
       - sqlserver
     restart: always
